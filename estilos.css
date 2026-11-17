@@ -1,0 +1,505 @@
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+:root {
+  --color-institucional: #7a0019;
+  --color-institucional-dark: #4a0010;
+  --color-institucional-hover: #a0002a;
+  --color-dorado: #ffd700;
+  --color-dorado-hover: #ffc107;
+  --bg-suave: #f4f6f9;
+}
+
+body {
+  margin: 0;
+  padding-top: 100px !important; /* Desplaza todo el contenido debajo de la barra */
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg-suave);
+  color: #1e293b;
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   NAVBAR & HEADER
+===================================================== */
+.navbar {
+  background: var(--color-institucional);
+}
+
+
+/* HEADER & LOGOS */
+.header-top {
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+  padding: 10px 0 !important;
+}
+
+.logo-gob {
+  width: 135px !important;
+  height: 135px !important;
+  object-fit: contain !important;
+  background-color: #ffffff !important;
+  padding: 8px !important;
+  border-radius: 50% !important;
+  border: 3px solid var(--color-institucional) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12) !important;
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.logo-gob:hover {
+  transform: scale(1.04);
+}
+
+/* Ajuste responsivo para celulares y pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+    padding-top: 85px !important;
+  }
+
+  .header-top {
+    margin-top: 10px !important;
+  }
+
+  .logo-gob {
+    width: 100px !important;
+    height: 100px !important;
+    padding: 5px !important;
+  }
+}
+
+.eslogan {
+  color: var(--color-institucional);
+  font-weight: bold;
+}
+
+h2, .titulo-materias, .contacto-titulo {
+  color: var(--color-institucional);
+  font-weight: bold;
+}
+
+/* =====================================================
+   CARRUSEL & TARJETAS
+===================================================== */
+.carousel,
+.cards-container {
+  margin-bottom: 50px;
+}
+
+.carousel-img {
+  height: 480px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.card-pro {
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-pro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-pro img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.noticia img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 15px;
+}
+
+/* =====================================================
+   MENÚ LATERAL (OFFCANVAS)
+===================================================== */
+.offcanvas {
+  background: linear-gradient(to bottom, var(--color-institucional), var(--color-institucional-dark));
+  color: #ffffff;
+}
+
+.offcanvas-title {
+  color: var(--color-dorado);
+  font-weight: bold;
+}
+
+.btn-close {
+  filter: invert(1);
+}
+
+.offcanvas .form-select {
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.formato-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #333333;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.2s ease, background 0.2s ease;
+  border-left: 5px solid var(--color-dorado-hover);
+}
+
+.formato-link:hover {
+  background: var(--color-dorado-hover);
+  color: #000000;
+  transform: translateX(5px);
+}
+
+/* =====================================================
+   BOTONES FLOTANTES
+===================================================== */
+.imss-float {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  display: flex !important;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.imss-btn {
+  background: var(--color-institucional);
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.imss-btn:hover {
+  background: var(--color-institucional-hover);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   PLAN DE ESTUDIOS (MODAL)
+===================================================== */
+.materias-modal {
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+.materias-header {
+  background: linear-gradient(135deg, var(--color-institucional), var(--color-institucional-hover));
+  color: #ffffff;
+  padding: 22px 28px;
+}
+
+.semestres-menu {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.semestre-btn {
+  border: 2px solid #e1e1e1;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 12px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.semestre-btn span {
+  font-size: 24px;
+}
+
+.semestre-btn strong {
+  font-size: 18px;
+  color: #555555;
+}
+
+.semestre-btn small {
+  color: #888888;
+}
+
+.semestre-btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-institucional);
+}
+
+.semestre-btn.activo {
+  background: linear-gradient(135deg, var(--color-institucional), var(--color-institucional-hover));
+  border-color: var(--color-institucional);
+  color: #ffffff;
+}
+
+.semestre-btn.activo strong,
+.semestre-btn.activo small {
+  color: #ffffff;
+}
+
+.semestre-titulo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f8f9fa;
+  border-left: 5px solid var(--color-institucional);
+  border-radius: 10px;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+}
+
+.materias-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.materia-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.materia-card h5 {
+  color: var(--color-institucional);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.materia-card p {
+  color: #4b5563;
+  font-size: 13.5px;
+  margin-bottom: 12px;
+}
+
+.datos-materia span {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.materia-card.socioemocional { border-top: 4px solid #e5c400; }
+.materia-card.estatal { border-top: 4px solid #4d83c4; }
+.materia-card.complementaria { border-top: 4px solid #45a049; }
+
+/* =====================================================
+   SECCIÓN CONTACTO
+===================================================== */
+.contacto-section {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.contacto-info {
+  background: linear-gradient(135deg, var(--color-institucional), var(--color-institucional-dark));
+  color: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  height: 100%;
+}
+
+.contacto-dato {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.contacto-icono {
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.contacto-formulario {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.btn-enviar-contacto {
+  background: linear-gradient(135deg, var(--color-institucional), var(--color-institucional-hover));
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 35px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-enviar-contacto:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(122, 0, 25, 0.3);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.footer-gobierno {
+  background: var(--color-institucional);
+  color: #ffffff;
+  padding: 40px 20px 20px;
+}
+
+.footer-gobierno h5 {
+  color: var(--color-dorado);
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.footer-gobierno p,
+.footer-gobierno li {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer-gobierno a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* =====================================================
+   RESPONSIVIDAD
+===================================================== */
+@media (max-width: 992px) {
+  .semestres-menu { grid-template-columns: repeat(3, 1fr); }
+  .materias-grid { grid-template-columns: repeat(2, 1fr); }
+  .carousel-img { height: 350px; }
+}
+
+@media (max-width: 576px) {
+  .semestres-menu { grid-template-columns: repeat(2, 1fr); }
+  .materias-grid { grid-template-columns: 1fr; }
+  .carousel-img { height: 230px; }
+  .header-top { margin-top: 75px; }
+  .logo-gob { width: 120px; height: 120px; }
+}
+
+/* =====================================================
+   SUBMENÚS MULTINIVEL
+===================================================== */
+.dropdown-submenu {
+  position: relative;
+}
+
+.sub-arrow {
+  font-size: 11px;
+  color: #888;
+  margin-left: 10px;
+}
+
+/* En computadora: despliegue hacia la izquierda */
+@media (min-width: 992px) {
+  .dropdown-submenu > .sub-menu-left {
+    top: 0;
+    right: 100% !important; /* Despliega hacia adentro/izquierda */
+    left: auto !important;
+    margin-top: -6px;
+    display: none;
+  }
+
+  /* Se muestra al posar el mouse */
+  .dropdown-submenu:hover > .sub-menu-left,
+  .dropdown-submenu.activo > .sub-menu-left {
+    display: block !important;
+  }
+}
+
+/* En dispositivos móviles */
+@media (max-width: 991px) {
+  .dropdown-submenu > .sub-menu-left {
+    position: static !important;
+    margin-left: 15px;
+    background: #f1f5f9;
+    border: none;
+    display: none;
+  }
+
+  .dropdown-submenu.activo > .sub-menu-left {
+    display: block !important;
+  }
+
+  .sub-arrow {
+    transform: rotate(-90deg);
+  }
+}
+/* =====================================================
+   ACTIVACIÓN DE SUBMENÚS (INGLÉS -> PARCIALES -> TEMAS)
+===================================================== */
+.dropdown-submenu {
+  position: relative !important;
+}
+
+/* En computadoras: mostrar en automático al poner el cursor */
+@media (min-width: 992px) {
+  /* Submenús posicionados a la izquierda */
+  .dropdown-submenu > .sub-menu-left {
+    position: absolute !important;
+    top: 0 !important;
+    right: 100% !important;
+    left: auto !important;
+    margin-top: -6px !important;
+    margin-right: 2px !important;
+    display: none;
+    min-width: 170px;
+  }
+
+  /* Al posar el mouse sobre el elemento padre, forzar a que aparezca */
+  .dropdown-submenu:hover > .sub-menu-left {
+    display: block !important;
+  }
+}
+
+/* En teléfonos o pantallas táctiles */
+@media (max-width: 991px) {
+  .dropdown-submenu > .sub-menu-left {
+    position: static !important;
+    display: none;
+    margin-left: 15px !important;
+    background: #f8f9fa !important;
+    box-shadow: none !important;
+  }
+
+  .dropdown-submenu.activo > .sub-menu-left {
+    display: block !important;
+  }
+}
